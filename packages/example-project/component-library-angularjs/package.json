@@ -1,0 +1,29 @@
+{
+  "name": "component-library-angularjs",
+  "version": "0.0.1",
+  "description": "AngularJS specific wrapper for component-library",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "files": [
+    "/dist"
+  ],
+  "author": "JeremyDec",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.5",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "core-js": "^3.9.0",
+    "regenerator-runtime": "^0.13.7",
+    "rollup": "^2.39.0"
+  },
+  "dependencies": {
+    "angular": "^1.8.2",
+    "component-library": "^0.0.4"
+  }
+}

@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
+import { angularJSOutputTarget } from '@stencil/angularjs-output-target';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget, ComponentModelConfig } from '@stencil/vue-output-target';
 import { svelteOutputTarget, ComponentBindingConfig } from '@stencil/svelte-output-target';
@@ -91,6 +92,13 @@ export const config: Config = {
       componentCorePackage: 'component-library',
       directivesProxyFile: '../component-library-angular/src/directives/proxies.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
+    }),
+    angularJSOutputTarget({
+      componentCorePackage: 'component-library',
+      proxiesFile: '../component-library-angularjs/src/components.js',
+      includePolyfills: true,
+      includeDefineCustomElements: true,
+      wrappedComponentsPrefix: 'ng',
     }),
     reactOutputTarget({
       componentCorePackage: 'component-library',
