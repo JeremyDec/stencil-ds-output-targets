@@ -1,0 +1,58 @@
+{
+  "name": "@stencil/angularjs-output-target",
+  "version": "0.0.0",
+  "description": "AngularJS output target for @stencil/core components.",
+  "keywords": [
+    "stencil",
+    "angularjs"
+  ],
+  "homepage": "https://github.com/ionic-team/stencil-ds-output-targets/tree/master/packages/angularjs-output-target#readme",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil-ds-output-targets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-ds-output-targets.git"
+  },
+  "license": "BSD-3-Clause",
+  "author": "JeremyDec",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prebuild": "npx rimraf ./dist",
+    "build": "tsc && npm run rollup",
+    "watch": "tsc --watch",
+    "rollup": "rollup -c",
+    "test": "jest --passWithNoTests",
+    "test.watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "path": "^0.12.7",
+    "rollup": "^2.33.1",
+    "typescript": "^4.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|ts|tsx)$": "<rootDir>/test/jest.preprocessor.js"
+    },
+    "testRegex": "(\\.(test|spec))\\.(ts?|tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ],
+    "testURL": "http://localhost"
+  }
+}
